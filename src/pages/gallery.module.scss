@@ -1,0 +1,36 @@
+.galleryWrapper {
+  padding: 24px;
+  ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+    li {
+      position: relative;
+      .paintingNameWrap {
+        position: absolute;
+        bottom: 32px;
+        left: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        h3 {
+          font-family: "Libre Baskerville";
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 30px;
+          color: #ffffff;
+        }
+        p {
+          font-family: "Libre Baskerville";
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 16px;
+          color: #ffffff;
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+}
