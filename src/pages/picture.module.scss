@@ -1,0 +1,96 @@
+.slideShow {
+  .imgInfoWrap {
+    width: 100%;
+    height: 280px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    .viewImage {
+      display: flex;
+      width: 152px;
+      height: 40px;
+      justify-content: space-between;
+      padding: 14px 16px;
+      background: rgba(0, 0, 0, 0.75);
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      img {
+        width: 12px;
+      }
+      p {
+        font-family: "Libre Baskerville";
+        font-weight: 700;
+        font-size: 10px;
+        color: #ffffff;
+        letter-spacing: 2.14286px;
+      }
+    }
+    .authorName {
+      position: absolute;
+      bottom: -54px;
+      left: -1px;
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+      max-height: 133px;
+      gap: 8px;
+      padding: 24px;
+      background-color: white;
+      h2 {
+        font-family: "Libre Baskerville";
+        font-weight: 700;
+        font-size: 24px;
+        color: #000000;
+      }
+      p {
+        font-family: "Libre Baskerville";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 19px;
+        color: #7d7d7d;
+      }
+    }
+    .artistImage {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      left: 16px;
+      bottom: -118px;
+    }
+  }
+  .imgDescription {
+    margin-top: 172px;
+    position: relative;
+    h3 {
+      position: absolute;
+      top: -87px;
+      right: 0;
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 100px;
+      color: #f3f3f3;
+      z-index: -1;
+    }
+    p {
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 28px;
+      color: #7d7d7d;
+      margin-bottom: 68px;
+    }
+    a {
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 9px;
+      line-height: 11px;
+      letter-spacing: 1.92857px;
+      text-decoration-line: underline;
+      color: #7d7d7d;
+    }
+  }
+}
