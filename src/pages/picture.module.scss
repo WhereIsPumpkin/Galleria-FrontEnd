@@ -47,7 +47,6 @@
       }
       p {
         font-family: "Libre Baskerville";
-        font-style: normal;
         font-weight: 400;
         font-size: 15px;
         line-height: 19px;
@@ -65,6 +64,7 @@
   .imgDescription {
     margin-top: 172px;
     position: relative;
+    margin-bottom: 90px;
     h3 {
       position: absolute;
       top: -87px;
@@ -91,6 +91,47 @@
       letter-spacing: 1.92857px;
       text-decoration-line: underline;
       color: #7d7d7d;
+    }
+  }
+  .borderTop {
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    .blackBorder {
+      height: 1px;
+      background-color: #000000;
+    }
+  }
+  .slideShowSwitch {
+    padding-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .paintingName {
+      display: flex;
+      gap: 9px;
+      flex-direction: column;
+      h4 {
+        font-family: "Libre Baskerville";
+        font-weight: 700;
+        font-size: 14px;
+        color: #000000;
+      }
+      p {
+        font-family: "Libre Baskerville";
+        font-weight: 400;
+        font-size: 10px;
+        color: #000000;
+        opacity: 0.75;
+      }
+    }
+    .slideShowButtons {
+      display: flex;
+      gap: 23px;
+      img {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { DataContext } from "../DataContext";
 import viewIcon from "../assets/icon-view-image.svg";
+import backIcon from "../assets/icon-back-button.svg";
+import nextIcon from "../assets/icon-next-button.svg";
 
 import styles from "./picture.module.scss";
 
@@ -14,6 +16,11 @@ const Picture = () => {
   }
 
   const painting = data.find((item) => item.name === id.replaceAll("-", " "));
+
+  const paintingIndex = data.indexOf(painting) + 1;
+  const paintingCount = data.length;
+  const blackBorderWidth = (paintingIndex / paintingCount) * 100;
+  console.log(paintingIndex - 2);
   return (
     <div className={styles.slideShow}>
       <div className={styles.imgInfoWrap}>
@@ -37,6 +44,49 @@ const Picture = () => {
         <h3>{painting.year}</h3>
         <p>{painting.description}</p>
         <a href={painting.source}>GO TO SOURCE</a>
+      </div>
+      <div className={styles.borderTop}>
+        <div
+          className={styles.blackBorder}
+          style={{ width: `${blackBorderWidth}%` }}
+        />
+      </div>
+      <div className={styles.slideShowSwitch}>
+        <div className={styles.paintingName}>
+          <h4>{painting.name}</h4>
+          <p>{painting.artist.name}</p>
+        </div>
+        <div className={styles.slideShowButtons}>
+          <Link
+            to={
+              paintingIndex !== 1
+                ? `/${data[
+                    (paintingIndex - 2 + paintingCount) % paintingCount
+                  ].name.replaceAll(" ", "-")}`
+                : undefined
+            }
+          >
+            <img
+              src={backIcon}
+              style={{ opacity: paintingIndex === 1 ? 0.15 : 1 }}
+            />
+          </Link>
+          <Link
+            to={
+              paintingIndex !== paintingCount
+                ? `/${data[paintingIndex % paintingCount].name.replaceAll(
+                    " ",
+                    "-"
+                  )}`
+                : undefined
+            }
+          >
+            <img
+              src={nextIcon}
+              style={{ opacity: paintingIndex === paintingCount ? 0.15 : 1 }}
+            />
+          </Link>
+        </div>
       </div>
     </div>
   );
