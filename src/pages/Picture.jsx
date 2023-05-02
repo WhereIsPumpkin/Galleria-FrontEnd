@@ -4,11 +4,11 @@ import { DataContext } from "../DataContext";
 import viewIcon from "../assets/icon-view-image.svg";
 import backIcon from "../assets/icon-back-button.svg";
 import nextIcon from "../assets/icon-next-button.svg";
-
 import styles from "./picture.module.scss";
 
 const Picture = () => {
-  const data = useContext(DataContext);
+  const { data, viewImage, setViewImage } = useContext(DataContext);
+
   const { id } = useParams();
 
   if (!data) {
@@ -20,21 +20,27 @@ const Picture = () => {
   const paintingIndex = data.indexOf(painting) + 1;
   const paintingCount = data.length;
   const blackBorderWidth = (paintingIndex / paintingCount) * 100;
-  console.log(paintingIndex - 2);
+
   return (
     <div className={styles.slideShow}>
       <div className={styles.imgInfoWrap}>
         <img
           src={`https://galleriabackend.onrender.com${painting.images.hero.small}`}
         />
-        <div className={styles.viewImage}>
+
+        <div
+          className={styles.viewImage}
+          onClick={() => setViewImage(!viewImage)}
+        >
           <img src={viewIcon} />
           <p>VIEW IMAGE</p>
         </div>
+
         <div className={styles.authorName}>
           <h2>{painting.name}</h2>
           <p>{painting.artist.name}</p>
         </div>
+
         <img
           className={styles.artistImage}
           src={`https://galleriabackend.onrender.com${painting.artist.image}`}
@@ -88,6 +94,14 @@ const Picture = () => {
           </Link>
         </div>
       </div>
+      {viewImage && (
+        <div className={styles.viewImageBig}>
+          <h3 onClick={() => setViewImage(!viewImage)}>CLOSE</h3>
+          <img
+            src={`https://galleriabackend.onrender.com${painting.images.gallery}`}
+          />
+        </div>
+      )}
     </div>
   );
 };

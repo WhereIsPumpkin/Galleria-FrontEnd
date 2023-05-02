@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { DataContext } from "../DataContext";
 
 const Gallery = () => {
-  const data = useContext(DataContext);
+  const { data } = useContext(DataContext);
   return (
     <ul>
       {data &&

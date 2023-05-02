@@ -1,10 +1,11 @@
 .slideShow {
+  position: relative;
+  z-index: 1;
   .imgInfoWrap {
     width: 100%;
     height: 280px;
     position: relative;
     img {
-      width: 100%;
       height: 100%;
     }
     .viewImage {
@@ -132,6 +133,30 @@
         width: 16px;
         height: 16px;
       }
+    }
+  }
+  .viewImageBig {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    justify-content: center;
+    padding: 0 24px;
+    h3 {
+      font-family: "Libre Baskerville";
+      font-weight: 700;
+      font-size: 14px;
+      text-align: right;
+      letter-spacing: 3px;
+      color: #ffffff;
+    }
+    img {
+      width: 327px;
     }
   }
 }

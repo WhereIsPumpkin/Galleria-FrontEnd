@@ -6,7 +6,7 @@ import Picture from "./pages/Picture";
 
 function App() {
   return (
-    <>
+    <div className="mainWrap">
       <Header />
       <main>
         <Routes>
@@ -14,7 +14,7 @@ function App() {
           <Route path="/:id" element={<Picture />} />
         </Routes>
       </main>
-    </>
+    </div>
   );
 }
 
