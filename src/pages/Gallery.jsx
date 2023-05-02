@@ -5,12 +5,17 @@ import { useContext } from "react";
 import { DataContext } from "../DataContext";
 
 const Gallery = () => {
-  const { data } = useContext(DataContext);
+  const { data, startSlideshow, setStartSlideshow } = useContext(DataContext);
+
   return (
     <ul>
       {data &&
         data.map((item) => (
-          <Link to={`/${item.name.replace(/ /g, "-")}`} key={uuidv4()}>
+          <Link
+            to={`/${item.name.replace(/ /g, "-")}`}
+            key={uuidv4()}
+            onClick={() => setStartSlideshow(true)}
+          >
             <li key={uuidv4()}>
               <img
                 src={`https://galleriabackend.onrender.com${item.images.thumbnail}`}

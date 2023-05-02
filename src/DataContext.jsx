@@ -6,6 +6,7 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [data, setData] = useState(null);
   const [viewImage, setViewImage] = useState(false);
+  const [startSlideshow, setStartSlideshow] = useState(false);
 
   useEffect(() => {
     axios
@@ -19,7 +20,15 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ data, viewImage, setViewImage }}>
+    <DataContext.Provider
+      value={{
+        data,
+        viewImage,
+        setViewImage,
+        startSlideshow,
+        setStartSlideshow,
+      }}
+    >
       {children}
     </DataContext.Provider>
   );
