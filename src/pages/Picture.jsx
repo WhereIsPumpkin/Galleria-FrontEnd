@@ -24,9 +24,17 @@ const Picture = () => {
   return (
     <div className={styles.slideShow}>
       <div className={styles.imgInfoWrap}>
-        <img
-          src={`https://galleriabackend.onrender.com${painting.images.hero.small}`}
-        />
+        <picture>
+          <source
+            media="(min-width: 768px)"
+            srcSet={`https://galleriabackend.onrender.com${painting.images.hero.large}`}
+          />
+          <img
+            className="large-image"
+            src={`https://galleriabackend.onrender.com${painting.images.hero.small}`}
+            alt="Painting"
+          />
+        </picture>
 
         <div
           className={styles.viewImage}

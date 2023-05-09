@@ -10,3 +10,9 @@ main {
   height: 100%;
   padding: 24px;
 }
+
+@media (min-width: 768px) {
+  main {
+    padding: 40px;
+  }
+}
